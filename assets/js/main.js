@@ -115,26 +115,31 @@ document.addEventListener('DOMContentLoaded', () => {
   /**
    * Init swiper slider with 1 slide at once in desktop view
    */
-  new Swiper('.slides-1', {
-    speed: 600,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    slidesPerView: 3,
-    spaceBetween: 30,
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    }
-  });
-
+  
+    var swiper = new Swiper(".slides-1", {
+      slidesPerView: 1,
+      spaceBetween: 10,
+      speed: 600,
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      breakpoints: {
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 40,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 50,
+        },
+      },
+    }); 
 
   new Swiper('.slides-testimonial', {
     speed: 600,
@@ -153,8 +158,23 @@ document.addEventListener('DOMContentLoaded', () => {
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+      640: {
+        slidesPerView: 1,
+        spaceBetween: 0,
+      },
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+      }
     }
-  });
+  }
+  );
 
   /**
    * Animation on scroll function and init

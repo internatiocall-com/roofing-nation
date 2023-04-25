@@ -2,7 +2,7 @@
 <body>
 <?php include 'inc/header.php'; ?>
  <!-- ======= Hero Section ======= -->
- <section id="hero" class="hero d-flex align-items-center products">
+ <section id="hero" class="hero d-flex align-items-center products" style="height: 100%; background-position: right;background-color: var(--color-primary);">
     <div class="container">
       <div class="row gy-4 d-flex justify-content-between">
         <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">

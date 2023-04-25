@@ -2,25 +2,85 @@
 <body>
 <?php include 'inc/header.php'; ?>
 
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="hero d-flex align-items-center">
-    <div class="container">
-      <div class="row gy-4 d-flex justify-content-between">
-        <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
-              <div class="text-container">
-                  <h2 data-aos="fade-up">Experienced Roofing Manufacturing Company and Contractors at Your Service</h2>
-                    <p data-aos="fade-up" data-aos-delay="100">When it comes to roofing, you need a team of experienced, reliable professionals to help you get the job done right.</p>
-                    <a href="http://<?php echo $_SERVER['HTTP_HOST']; ?>/products" class="btn btn-primary">See all products<i class="bi bi-arrow-right"></i></a>
-                  </div>                  
-          </div>
-        <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-out">
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- End Hero Section -->
-  <main id="main">
 
+  
+  <main id="main" class ="home">
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="hero d-flex align-items-center" style ="pointer-events: none;">
+       <style>
+          .video-background iframe,
+            .video-background object,
+            .video-background embed {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 125%;
+              z-index:0;
+              object-fit: cover;
+            }
+         </style>
+         
+<div class="video-background" style=" pointer-events: none; overflow: hidden;object-fit: cover;">
+  <div class="video-foreground" style="object-fit: cover;">  
+     <div id="ytplayer"></div>
+
+
+<script>
+
+  var tag = document.createElement('script');
+  tag.src = "https://www.youtube.com/player_api";
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+  var player;
+  function onYouTubePlayerAPIReady() {
+    player = new YT.Player('ytplayer', {
+	//Parametros del video
+	 playerVars: { 'playlist':'EpwHM3x_atc' ,'controls':0 ,'autoplay':1,'mute':1, 'loop':1, 'showinfo': 0,'rel':0},
+      height: '100%',
+      width: '100%',
+	  //Id del video
+	   origin: 'https://dev.roofing-nation.com/' ,
+      videoId: 'EpwHM3x_atc',
+	  events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+	  }
+    });
+  }
+  
+      
+function onPlayerReady(event) {
+    event.target.setPlaybackQuality('hd720');
+        event.target.playVideo();
+
+}
+
+  var done = false;
+
+function onPlayerStateChange(event) {
+    if (event.data == YT.PlayerState.PLAYING && !done) {
+      setTimeout(stopVideo, 6000000);
+      done = true;
+    }
+    if (event.data == YT.PlayerState.BUFFERING) {
+       event.target.setPlaybackQuality('hd720');
+    }
+}
+
+ function stopVideo() {
+    player.stopVideo();
+  }
+</script>
+    <!-- <iframe width="100%" height="100%" src="https://www.youtube.com/embed/EpwHM3x_atc?playlist=EpwHM3x_atc&controls=0&autoplay=1&mute=1&loop=1&showinfo=0&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
+  </div>
+</div>
+
+
+ 
+  </section>
+<!--   End Hero Section  -->
      <!-- ======= Call To Action Section ======= -->
      <section id="call-to-action2" class="call-to-action2">
       <div class="container" data-aos="zoom-out">

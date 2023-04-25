@@ -263,7 +263,7 @@ margin-left: 0px;
   background: #00154D;
   color:#fff;
   position: relative;
-  max-height: 400px;
+  max-height: fit-content;
   padding-bottom: 30px;
 }
 
@@ -787,7 +787,7 @@ section {
   }
 
   .mobile-nav-show {
-    color: #fff;
+    color: #00154d;
     font-size: 28px;
     cursor: pointer;
     line-height: 0;
@@ -1081,6 +1081,7 @@ section {
   padding: 100px 0;
   max-width: 1040px;
   height: fit-content;
+  width: 94%;
   position: absolute;
   top: -165px;
   left: 0;
@@ -2045,12 +2046,21 @@ section {
 .hero {
   width: 100%;
   background-position: right;
-  background-color: var(--color-primary);
+  background-color: #00154d96;
   position: relative;
-  padding: 0px 0 0px 0;
+  overflow: hidden;
+  padding: 18px 0 29px 0;
   color: #fff;
   margin: 0px 0 0;
-  max-height: 75vh;
+  max-height: 95vh;
+}
+
+.hero  video {
+  position: absolute;
+  width:100% ;
+  left: 0;
+  top: 0;
+  z-index: -1;
 }
 
 .products .container .order-1{
@@ -2071,11 +2081,9 @@ section {
   padding: 0px;
   margin: 0px  0px 0px;
 }
-.hero .row.gy-4.d-flex.justify-content-between {
-    min-height: 100vh;
-}
+.hero .row.gy-4.d-flex.justify-content-between {height: auto;}
 .hero .container .order-1{
-  background-image: url("../img/banner-1.png");
+  /*background-image: url("../img/banner-1.png");*/
   background-size: contain;
   background-repeat: no-repeat;
   background-position: right;
@@ -2231,6 +2239,7 @@ section {
 
 .call-to-action2 .number-container {
   padding: 14px 0px;
+  margin: 0;
 }
 
 
@@ -2380,3 +2389,235 @@ swiper-container.swiper-initialized.swiper-horizontal.swiper-backface-hidden  im
   margin-bottom: 15px;
   color: #00154D;
 }
+
+
+
+
+/*Mè»Šviles en horizontal
+   ------------------------------------------------------------------------- */
+@media (min-width: 320px) { 
+    .product-grid .items-container{
+        grid-template-columns: 90%;
+        position: relative;
+        gap: 73px;
+        margin: 0 auto;
+    }
+  
+  
+    .product-grid .items-container .items {     
+      max-height: fit-content;
+      padding-bottom: 30px;
+  }
+  .call-to-action2 .number-container {
+    padding: 14px 0px;
+    margin: 0px 35px;
+   }    
+   .hero  video {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 32px;
+    z-index: -1;
+}
+   .hero .container .text-container {
+    max-width: 60%;
+    margin: 89px auto 17px;
+    padding: 18px 0 3px;
+}
+.hero h2 {
+  margin-bottom: 0px;
+  padding: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+}
+.detail-products .product-grid .items-container {
+  grid-template-columns: 50% 50%;
+  position: relative;
+  margin-right: 40px;
+  max-width: 57%;
+  top: 0;
+}
+}
+
+
+/*Mè»Šviles en horizontal
+   ------------------------------------------------------------------------- */
+@media (min-width: 480px) { 
+    
+}
+
+
+/* Mè»Šviles en horizontal o tablets en vertical
+   ------------------------------------------------------------------------- */
+@media (min-width: 768px) {
+  .product-grid .items-container {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    gap: 10px;
+    max-width: 1100px;
+    position: absolute;
+    top: -130px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+.product-grid .items-container .items {
+  background: #00154D;
+  color: #fff;
+  position: relative;
+  max-height: 400px ;
+  padding-bottom: 30px;
+}
+ 
+.call-to-action2 .number-container {
+  padding: 14px 0px;
+  margin: 0;
+}
+
+.hero  video {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 80px;
+  z-index: -1;
+}
+.hero .container .text-container {
+  max-width: 60%;
+  margin: 70px auto 0px;
+  padding: 0;
+}
+.hero h2 {
+  margin-bottom: 20px;
+  padding: 0;
+  font-size: 40px;
+  font-weight: 700;
+  color: #fff;
+}
+.detail-products .product-grid .items-container {
+  grid-template-columns: 50% 50%;
+  position: relative;
+  margin-right: 40px;
+  max-width: 57%;
+  top: 0;
+}
+}
+
+
+/* Tablets en horizonal y escritorios normales
+   ------------------------------------------------------------------------- */
+@media (min-width: 1024px) {
+  .product-grid .items-container {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    gap: 10px;
+    max-width: 1100px;
+    position: absolute;
+    top: -130px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+.product-grid .items-container .items {
+  background: #00154D;
+  color: #fff;
+  position: relative;
+  max-height: 400px ;
+  padding-bottom: 30px;
+}
+.call-to-action2 .number-container {
+  padding: 14px 0px;
+  margin: 0;
+}
+.hero  video {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 80px;
+  z-index: -1;
+}
+
+.hero .container .text-container {
+  max-width: 60%;
+  margin: 70px auto 0px;
+  padding: 0;
+}
+.hero h2 {
+  margin-bottom: 20px;
+  padding: 0;
+  font-size: 40px;
+  font-weight: 700;
+  color: #fff;
+}
+.detail-products .product-grid .items-container {
+  grid-template-columns: 50% 50%;
+  position: relative;
+  margin-right: 40px;
+  max-width: 57%;
+  top: 0;
+}
+}
+
+
+/* Escritorios muy anchos
+   ------------------------------------------------------------------------- */
+@media (min-width: 1200px) {
+  .product-grid .items-container {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    gap: 10px;
+    max-width: 1100px;
+    position: absolute;
+    top: -130px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.product-grid .items-container .items {
+  background: #00154D;
+  color: #fff;
+  position: relative;
+  max-height: 400px ;
+  padding-bottom: 30px;
+}
+  .call-to-action2 .number-container {
+    padding: 14px 0px;
+    margin: 0;
+}
+
+.hero  video {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 80px;
+  z-index: -1;
+}
+.hero .container .text-container {
+  max-width: 60%;
+  margin: 170px auto 154px;
+  padding: 0;
+}
+.hero h2 {
+  margin-bottom: 20px;
+  padding: 0;
+  font-size: 40px;
+  font-weight: 700;
+  color: #fff;
+}
+.detail-products .product-grid .items-container {
+  grid-template-columns: 50% 50%;
+  position: relative;
+  margin-right: 40px;
+  max-width: 57%;
+  top: 0;
+}
+
+}
+
+
+
+
